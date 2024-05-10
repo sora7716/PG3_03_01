@@ -33,7 +33,7 @@ int main() {
 
 	//“Yš1‚Ì—v‘f‚ğíœ{1,3}
 	g.erase(g.begin() + 1);
-	
+	cout << ("%d", g[2]) << endl;
 	//––”ö‚Ì—v‘f‚ğíœ
 	g.pop_back();
 #pragma endregion
