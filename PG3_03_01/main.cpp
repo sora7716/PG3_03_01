@@ -3,21 +3,25 @@
 using namespace std;
 
 int main() {
+	list<int>list{ 1,3,5,7,10 };
 
-	list<int>lst{ 1,2,3 };
-	auto itr = lst.begin();//0番目の要素を指すイテレータ
-	cout << *itr<<"\n";//itrは0番目の要素を指しているので1を表示
-	*itr = 9;//0番目の要素を9に変更
-	cout << *itr << "\n";//itrは0番目の要素を指しているので9を表示
-	itr++;
-	*itr = 10;//1番目の要素を10に変更
-	cout << *itr << "\n" << "\n";//itrは1番目の要素を指しているので10を表示
-	lst.push_front(114);//前に要素を追加
-	
-	lst.push_back(225);//後ろに要素を追加
-
-	//要素をすべて表示
-	for (auto itr = lst.begin(); itr != lst.end(); ++itr) {
+	//最初のリスト
+	cout << "追加前" << "\n";
+	for (std::list<int>::iterator itr = list.begin(); itr != list.end(); ++itr) {
+		cout << *itr << "\n";
+	}
+	cout << "==================================" << "\n";
+	//任意の場所に値を追加
+	for (std::list<int>::iterator itr = list.begin(); itr != list.end(); ++itr) {
+		
+		if (*itr == 3) {
+			itr = list.insert(itr,0);
+			++itr;
+        }
+	}
+	cout << "追加後" << "\n";
+	//追加後のリスト
+	for (std::list<int>::iterator itr = list.begin(); itr != list.end(); ++itr) {
 		cout << *itr << "\n";
 	}
 
